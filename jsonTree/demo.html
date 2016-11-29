@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json无限树</title>
+	<script src="lib/jquery-1.12.3.min.js"></script>
+	<script src="lib/jsonTree.js"></script>
+	<style>
+		html,body{
+			font-family: "Microsoft YaHei";
+			margin-left: 25%;
+			margin-right: 28%;
+			margin-top: 3%;
+		}
+		ul{
+			list-style: none;
+			font-size: 15px;
+			background: url('images/line.gif')  0 0 repeat-y;
+		}
+		.tree>ul{
+			list-style: none;
+			font-size: 15px;
+			padding-left: 0px;
+			background: url('images/line.gif')  0 0 repeat-y;
+		}
+		.tree{
+			background-color: #F0F6E4;
+
+		}
+
+		.incon1{
+			background-image: url('images/btn2.png');
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 13px;
+			height: 13px;
+			margin-right: 5px;
+			display: inline-block;
+		}
+		.incon2{
+			background-image: url('images/btn1.png');
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 13px;
+			height: 13px;
+			margin-right: 5px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div id="tree" class="tree"></div>
+	<script>
+	$(function(){
+		$.get("list.json").success(function(res){
+			$("#tree").jsonTree(res);
+		});
+	});
+	</script>
+</body>
+</html>
